@@ -1,4 +1,4 @@
-## Self Navigating Differential-Drive Robot
+## Self-Navigating Differential-Drive Robot
 
 A custom differential-drive robot that builds a map of a room with SLAM, localizes on that map and drives itself to goal points using Nav2. Everything runs in Gazebo Harmonic with ROS2 Jazzy.
 
