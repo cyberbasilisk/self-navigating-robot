@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Copy Nav2's default params for this ROS distro and adapt them to our robot.
+"""Copy Nav2's default params for this ROS distro and adapt them to robot.
 
 Run once (and again after any Nav2 update):
-    python3 ~/ros2_ws/src/my_robot_navigation/tools/make_params.py
+    python3 ~/ros2_ws/src/custom_navigation/tools/make_params.py
 """
 import os
 import sys
