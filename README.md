@@ -21,7 +21,7 @@ SLAM and AMCL should not run at the same time because they both publish `map →
 
 | Package | Purpose |
 |---|---|
-| `diff_drive_bringup` | Robot URDF/xacro, the room world, the Gazebo ↔ ROS2 bridge config, saved maps, RViz configs, sim launch file |
+| `diff_drive_bringup` | Robot URDF/xacro, the room world, the Gazebo to ROS2 bridge config, saved maps, RViz configs, sim launch file |
 | `custom_navigation` | Nav2 launch file and a script that generates the Nav2 parameter file for this robot |
 
 
