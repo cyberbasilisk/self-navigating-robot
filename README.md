@@ -8,6 +8,8 @@ A custom differential-drive robot that builds a map of a room with SLAM, localiz
 2. **Localization**: AMCL (particle-filter localization) matches live scans against the saved map to estimate where the robot is.
 3. **Navigation**: Give Nav2 a goal in RViz. It plans a route on the map, follows it, and avoids obstacles on the way.
 
+<img width="1000" height="500" alt="nav_slam" src="https://github.com/user-attachments/assets/831b9121-01d1-4f4e-bd41-cb1cd302f1c7" />
+
 ### Architecture
 
 Two phases, run separately:
