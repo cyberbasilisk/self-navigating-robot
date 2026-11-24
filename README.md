@@ -26,5 +26,17 @@ SLAM and AMCL should not run at the same time because they both publish `map →
 | `diff_drive_bringup` | Robot URDF/xacro, the room world, the Gazebo to ROS2 bridge config, saved maps, RViz configs, sim launch file |
 | `custom_navigation` | Nav2 launch file and a script that generates the Nav2 parameter file for this robot |
 
+### Tuning
+
+Nav2's defaults are tuned for a TurtleBot3, which is larger than this robot. `custom_navigation/tools/make_params.py` copies the default parameter file from the installed Nav2 and adjusts it.
+
+| Parameter | Value | Reason |
+|---|---|---|
+| `robot_radius` (both costmaps) | 0.15 m | Chassis is 0.20 × 0.15 m, so the circumscribed radius is about 0.13 m, plus margin |
+| `inflation_radius` (both costmaps) | 0.4 m | Keeps a safe distance from walls without closing off the narrower parts of the room |
+| AMCL initial pose | (0, 0, 0) | The map origin is where the robot started when mapping, which is its spawn point |
+
+Generating the file from the installed defaults, instead of hand-writing one, keeps it consistent with whichever Nav2 version is installed.
+
 
 
