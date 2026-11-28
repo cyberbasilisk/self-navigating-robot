@@ -41,9 +41,13 @@ Generating the file from the installed defaults, instead of hand-writing one, ke
 ### Debugging log
 
 1. **Scan points missing in RViz.** Gazebo stamped each scan with its own scoped sensor name, which did not exist in the TF tree, so RViz and SLAM couldn't place the points. Fixed by setting `gz_frame_id` to `lidar_link` on the sensor.
+
 2. **Wheel frames reported transform errors.** The wheel joints are continuous, so their transforms depend on joint angles that Gazebo knew but ROS2 didn't. Fixed by publishing joint states from Gazebo and bridging `/joint_states`.
+
 3. **Map display showed an error in RViz.** `slam_toolbox` publishes the map with transient-local durability, and the display's QoS had to match, the same class of problem as the `BEST_EFFORT` scan topic in Project 1.
+
 4. **Nav2 couldn't find its params file.** The generated file has to exist before `colcon build`, because the build copies it into the install directory. Therefore generate, before build.
+
 5. **`use_sim_time` everywhere.** Every node touching timestamps or transforms needs it set, or messages stamped with sim time get rejected against wall-clock time.
 
 ### Running it
@@ -78,4 +82,5 @@ In RViz, use **2D Pose Estimate** if the robot looks misplaced, then **2D Goal P
 ### What's next
 
 - Multi-waypoint patrol using Nav2's waypoint follower.
+
 - Port to real hardware (Raspberry Pi + LIDAR), comparing sim-to-real behavior.
